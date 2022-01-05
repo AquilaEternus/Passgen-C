@@ -4,9 +4,13 @@ Generates and prints a random string between 8 and 2048 characters in length to 
 
 #### How to Run:
 
-To run, compile using `make` and run the generated executable named `passgen`.
+Compile using `make` and run the generated executable with `./passgen`.
 
-Use `./passgen -h` to see program description available options.
+Use `./passgen -h` to see program description and available options.
+
+Example Usage:
+
+-  `./passgen 128` Generates a string 128 characters in length with all possible characters.
 
 #### Installation (Only on Linux):
 
