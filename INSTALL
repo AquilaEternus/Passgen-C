@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# INSTALL passgen into /usr/bin
+
+make
+mv passgen /usr/bin
