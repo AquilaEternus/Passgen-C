@@ -41,9 +41,9 @@ char* help();
 
 int main(int argc, char* argv[]) {
    randchar* randfuncs = malloc(sizeof(randchar) * 4);
-   int opt, opts_len = 0, error = 0, passwdlen = 0;
+   int opt, opts_len = 0, passwdlen = 0;
 
-   // Popultaes randfuncs if options are given, except -h.
+   // Populates randfuncs if options are given, except -h.
    while ((opt = getopt(argc, argv, "snlLh")) != -1) {
       switch (opt) {
       case 's': *(randfuncs + opts_len++) = &get_rand_symbol; break;
@@ -155,7 +155,7 @@ long get_passwd_len(char* str) {
    return result;
 }
 
-/* Validates password between 8 and 1024 characters long */
+/* Validates password within the length of the defined constants. */
 int validate_passwdlen(int passwdlen) {
    return passwdlen >= LOWER_LEN && passwdlen <= UPPER_LEN;
 }
