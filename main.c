@@ -13,14 +13,14 @@
  /* Constants */
 #define L_SIZE 26
 #define N_SIZE 10
-#define S_SIZE 30
+#define S_SIZE 29
 #define ASCII_FOR_0 48
 #define ASCII_FOR_9 57
 #define LOWER_LEN 8
 #define UPPER_LEN 2048
 const char letters[L_SIZE] = "abcdefghijklmnopqrstuvwxyz";
 const char numbers[N_SIZE] = "0123456789";
-const char symbols[S_SIZE] = "~!@#$%^&*()-\\=_+[]{}|;:,./<>?";
+const char symbols[S_SIZE] = "~!@#$^&*()%\\-=_+[]{}|;:,./<>?";
 
 /* Types */
 typedef char (*randchar)(); // Function pointer type for functions that generate random char
@@ -48,8 +48,8 @@ int main(int argc, char* argv[]) {
       switch (opt) {
       case 's': *(randfuncs + opts_len++) = &get_rand_symbol; break;
       case 'n': *(randfuncs + opts_len++) = &get_rand_number; break;
-      case 'l': *(randfuncs + opts_len++) = &get_rand_u_letter; break;
-      case 'L': *(randfuncs + opts_len++) = &get_rand_l_letter; break;
+      case 'l': *(randfuncs + opts_len++) = &get_rand_l_letter; break;
+      case 'L': *(randfuncs + opts_len++) = &get_rand_u_letter; break;
       case 'h': printf("%s", help()); free(randfuncs); return 0; break;
       default: printf("%s", help()); free(randfuncs); return 0; break;
       }
